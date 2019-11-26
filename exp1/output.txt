@@ -10,3 +10,5 @@ Frequency in +- 3sigma: 1
 Frequency in +- 2sigma: 0.96667
 Frequency in +- sigma: 0.76667
 Frequency in +- sigma/2: 0.56667
+Frequency in +- sigma/4: 0.36
+Frequency in +- sigma/8: 0.19333
