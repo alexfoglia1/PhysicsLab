@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage[left=1.00cm, right=1.00cm, top=1.00cm, bottom=1.00cm]{geometry}
 \begin{document}
 \large
@@ -15,10 +16,11 @@
 \texttt{
 Media osservata: $\mu = $ 0.072313 $\frac{m}{s^2}$\\
 Scarto quadratico medio: $\sigma = $ 2.1713 10\textsuperscript{-4}\\
-}\begin{figure}
+}
+\begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{valuesPlot}
-\caption{\texttt{Valori osservati e media}}
+\includegraphics[width=0.7\linewidth]{valuesPlot.png}
+\caption*{\texttt{Valori osservati e media}}
 \label{fig:valuesplot}
 \end{figure}
 
