@@ -10,7 +10,7 @@ Once each fotocell height is known:
 	- y0 = height of 1st
 	- y1 = height of 2st - y0
 	- y2 = height of 3rd - y0
-Hence the acceleration is given by:
+The acceleration is given by:
 
 	          y2t1-y1t2
 	 a = 2  --------------
