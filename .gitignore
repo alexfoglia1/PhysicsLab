@@ -2,3 +2,6 @@
 *.aux
 *.log
 octaveworkspace
+.classpath
+.project
+.settings
