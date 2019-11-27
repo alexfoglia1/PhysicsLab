@@ -5,10 +5,9 @@ import java.io.FileReader;
 
 public class Reader
 {
-
 	public static void main(String[] args) throws Exception
 	{
-		FileReader r = new FileReader("../exp1/values.txt");
+		FileReader r = new FileReader(args[1]);
 		BufferedReader br = new BufferedReader(r);
 		String line = br.readLine();
 		System.out.print("[");
@@ -20,5 +19,4 @@ public class Reader
 		br.close();
 		System.out.println("]");
 	}
-
 }
