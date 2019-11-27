@@ -1,0 +1,17 @@
+Aim of this experience is to measure the acceleration of a mass connected to a flywheel.
+The flywheel is connected to the mass by means of a pulley and an inextensible iron wire.
+The motion is observed under the assumption of uniformly accelerated rectilinear condition.
+Measures are taken by the means of three photocells positioned along the vertical axis where
+the mass falls. These photocells capture the times when the mass passes in front of them:
+	- t0 = 1st photocell time
+	- t1 = 2nd photocell time
+	- t2 = 3rd photocell time
+Once each fotocell height is known:
+	- y0 = height of 1st
+	- y1 = height of 2st - y0
+	- y2 = height of 3rd - y0
+Hence the acceleration is given by:
+
+	          y2t1-y1t2
+	 a = 2  --------------
+                 t1t2(t2-t1)
