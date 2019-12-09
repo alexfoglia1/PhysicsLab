@@ -1,0 +1,92 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage[left=1.00cm, right=1.20cm, top=0.10cm, bottom=1.10cm]{geometry}
+\begin{document}
+	\fontfamily{qcr}\selectfont
+\begin{center}
+	\textbf{Sintesi Esperienza Bilancia}	
+\end{center}
+\paragraph{Misure con un solido, scopo dell'esperienza, relazioni funzionali, ipotesi di validit\`a}\mbox{}\\*\\*
+Lo scopo dell'esperienza \`e quello di misurare la densit\`a media assoluta e la densit\`a relativa di due solidi attraverso l'utilizzo di una bilancia di precisione, combinato con il metodo geometrico e con il metodo del picnometro.\\*
+I due solidi in esame sono un cilindro di alluminio e un cuboide di ottone parzialmente cavo al suo interno per effetto di una foratura cilindrica che decorre lungo un suo asse passante per il centro di massa.\\*
+Attraverso la bilancia possiamo misurare la massa $M$ del solido, mentre attraverso un palmer e un calibro ventesimale misuriamo le dimensioni dello stesso nello spazio, al fine di determinarne il volume $V$. La densit\`a media assoluta $\delta$ \`e pari a $\delta = \frac{M}{V}$ mentre la densit\`a relativa \`e definita come il rapporto tra $\delta$ e la densit\`a media assoluta $\delta_A$ di un equivalente volume di acqua distillata alla temperatura di $T=3.98 °C$, $\delta_r = \frac{\delta}{\delta_A}.$\\*
+Il picnometro \`e invece uno strumento attraverso il quale sono state definite due procedure per poter misurare indirettamente la densit\`a relativa di un corpo solido, attraverso misure ripetute di masse. Qualunque misura riportata in seguito ha un significato fisico solo se questa \`e stata presa nello stesso luogo delle altre, senza spostare mai la bilancia rispetto al luogo in cui questa \`e tarata. 
+\paragraph{Metodo Geometrico}\mbox{}\\*\\*
+Solido 1 (Cilindro)\\*\\*
+$M = (5.14 \pm 0.04)g$\\*
+$h = (35.00 \pm 0.05)mm$\\*
+$d = (8.24 \pm 0.01)mm$\\*
+$V =\pi\left(\frac{d}{2}\right)^2h = \pi\left(\frac{8.24\;mm}{2}\right)^2 35.00\;mm = 1866.43\;mm^3 $\\*\\*
+$\Delta V = \left|\frac{\partial V}{\partial d} \Delta d\right| + \left|\frac{\partial V}{\partial h} \Delta h\right| = \frac{\pi d h}{2} \Delta d + \frac{\pi d^2}{4} \Delta h = \frac{\pi (8.24\;mm) (35.00\;mm)}{2} 0.01\;mm + \frac{\pi (67.8976\;mm^2)}{4} 0.05\;mm = 7.19650912343 mm^3
+ \approxeq 7.20\;mm^3$\\*\\*
+$\delta_m = \frac{M}{V} = \frac{5.14\;g}{1866.43\;mm^3} = 0.00275392058636 \frac{g}{mm^3} = 2.75392058636 \frac{g}{cm^3} \approxeq 2.75 \frac{g}{cm^3}$ Densit\`a media assoluta misurata\\*\\*
+$\Delta\delta_m = \left|\frac{\partial \delta_m}{\partial M} \Delta M\right| + \left|\frac{\partial \delta_m}{\partial V} \Delta V\right| = \frac{1}{V} \Delta M + \frac{M}{V^2} \Delta V = \frac{0.04}{1866.43}\;\frac{g}{mm^3} + \frac{5.14\;7.20}{3483560.9449}\;\frac{g\;mm^3}{mm^6} = 0.0000320497498566 \frac{g}{mm^3} = 0.0320497498566 \frac{g}{cm^3} \approxeq 0.03 \frac{g}{cm^3} $\\*\\*
+$f_{Arch} = 0.999565217931$\\*\\*
+\textbf{\textcolor{red}{
+$\delta = \delta_m\;f_{Arch} = 2.75\;0.999565217931\;\frac{g}{cm^3} = 2.7488043493075 \frac{g}{cm^3} \approxeq 2.75 \frac{g}{cm^3} $ Densit\`a media assoluta\\*\\*
+$\Delta \delta = \Delta \delta_m \;f_{Arch} = 0.03\;0.999565217931\frac{g}{cm^3} = 0.02998695653793 \frac{g}{cm^3} \approxeq 0.03 \frac{g}{cm^3}$\\*
+Vedere pagina 7 dispense Esperienza\_bilancia.pdf}}\\*\\*
+Solido 2 (Parallelepipedo)\\*\\*
+$M = (10.21 \pm 0.04)g$\\*
+$h = (5.58 \pm 0.01)mm$\\*
+$p = (7.94 \pm 0.01)mm$\\*
+$l = (34.17 \pm 0.05)mm$\\*
+$d = (3.04 \pm 0.05)mm$\\*
+$V = lph - \pi\left(\frac{d}{2}\right)^2l = 34.17\;7.94\;5.58 \; mm^3 - \pi(\frac{3.04\;mm}{2})^2 34.17 \; mm = 1265.89135426\;mm^3 \approxeq 1265.89 mm^3 $\\*\\*
+$\Delta V = \left|\frac{\partial V}{\partial l} \Delta l\right| + \left|\frac{\partial V}{\partial p} \Delta p\right| + \left|\frac{\partial V}{\partial h} \Delta h\right| + \left|\frac{\partial V}{\partial d} \Delta d\right| = $\\*
+$ = \left|hp - \frac{\pi d^2}{4} \Delta l \right| + hl \Delta p + ld \Delta h +
+\left| - \frac{\pi d l}{2}  \Delta d\right| = 12.9562620106 mm^3 \approxeq 12.96\;mm^3
+$
+\\*\\*
+$\delta_m = \frac{M}{V} = \frac{10.21\;g}{1265.89\;mm^3} = 0.00806547172345 
+\frac{g}{mm^3} = 8.06547172345 \frac{g}{cm^3} \approxeq 8.07 \frac{g}{cm^3}
+$ Densit\`a media assoluta misurata\\*\\*
+$\Delta\delta_m = \left|\frac{\partial \delta_m}{\partial M} \Delta M\right| + \left|\frac{\partial \delta_m}{\partial V} \Delta V\right| = \frac{1}{V} \Delta M + \frac{M}{V^2} \Delta V = \frac{0.04}{1265.89}\;\frac{g}{mm^3} + \frac{10.21\;12.96}{1602477.4921}\;\frac{g\;mm^3}{mm^6} = 0.000114171463189
+ \frac{g}{mm^3} = 0.114171463189 \frac{g}{cm^3} \approxeq 0.11 \frac{g}{cm^3} $\\*\\*
+$f_{Arch} = 0.999857142857$\\*\\*
+\textbf{\textcolor{red}{
+		$\delta = \delta_m\;f_{Arch} = 8.07\;0.999857142857\;\frac{g}{cm^3} = 8.06884714285599 \frac{g}{cm^3} \approxeq 8.07 \frac{g}{cm^3} $ Densit\`a media assoluta\\*\\*
+		$\Delta \delta = \Delta \delta_m \;f_{Arch} = 0.11\;0.999857142857\frac{g}{cm^3} = 0.10998428571427 \frac{g}{cm^3} \approxeq 0.11 \frac{g}{cm^3}$\\*\\*
+		Vedere pagina 7 dispense Esperienza\_bilancia.pdf}}\\*\\*
+\paragraph{Metodo del picnometro}\mbox{}\\*
+Solido 1 (Cilindro)\\*\\*
+Procedura 1:\\*
+$M_1 = (5.14 \pm 0.04)\;g$\\*
+$M_2 = (45.10 \pm 0.04)\;g$\\*
+$M_3 = (43.24 \pm 0.04)\;g$\\*
+$\delta_{rm} = \frac{M_1}{M_2 - M_3} = \frac{5.14}{45.10 - 43.24} \frac{g}{g} \approxeq 2.76  $ Densit\`a relativa misurata\\*
+$\Delta \delta_{rm} = \frac{1}{M_2 - M_3} \Delta M_1 + \frac{M_1}{(M_2 - M_3)^2} \Delta M_2 + \frac{M_1}{(M_2 - M_3)^2} \Delta M_3 = 0.140363047751 \approxeq 0.14
+ $\\*\\*
+$\delta_{H_2O}(T) = \delta_A(21.4 °C) \approxeq \delta_A(20.0 °C) = 0.99821 \frac{g}{cm^3}$\\*
+$f(T) = \frac{\delta_A(T)}{\delta_A(3.98 °C)} = \frac{ \delta_A(21.4 °C)}{\delta_A(3.98 °C)}  \approxeq \frac{ \delta_A(20.0 °C)}{\delta_A(3.98 °C)}= \frac{0.99821 \frac{g}{cm^3}}{0.99997 \frac{g}{cm^3}}$
+$\\*
+f_{Arch} = \left( 1 + \frac{\delta_a}{\delta_m} - \frac{\delta_a}{\delta_A} \right)
+ = \left(1 + \frac{0.001204 \frac{g}{cm^3}}{2.75 \frac{g}{cm^3}} - \frac{0.001204 \frac{g}{cm^3} }{0.99821 \frac{g}{cm^3}} \right) = 0.999231659157
+$\\*
+$\delta_r = \delta_{rm}\;f(T)\;f_{Arch} = 2.76\; \frac{0.99821}{0.99997}\; 0.999231659157 = 2.75302536595 \approxeq 2.75$ Densità relativa del solido\\*\\*
+$
+\Delta \delta_r = 0.1398924329130358 \approxeq 0.14
+$\\*
+$\delta = \delta_r \; \sigma_A = 2.75 \;0.99821 \frac{g}{cm^3} = 2.7450775 \frac{g}{cm^3} \approxeq 2.75 \frac{g}{cm^3}$ Densit\'a media assoluta\\*
+$\Delta \delta = 0.14 \frac{g}{cm^3}$\\*\\*
+\textbf{Giustificazione della scelta della procedura utilizzata}:\\*
+Abbiamo utilizzato la procedura 1 in quanto occorre effettuare una misura in meno rispetto\\*alla procedura 2, fatto che comporta una minore propagazione degli errori sul risultato finale.\\*\\*
+\textbf{Confronto col metodo geometrico}:\\*
+Il metodo del picnometro ha fornito un valore medio di densità media assoluta equivalente al valore ottenuto attraverso il metodo geometrico.\\*
+Si osserva una differenza piuttosto significativa circa le incertezze, tuttavia è noto dalla letteratura che la densità media assoluta dell'alluminio vale $2.7\;\frac{g}{cm^3}$, valore che rientra nel range individuato attraverso il metodo del picnometro, ma non in quello individuato dal metodo geometrico.\\*
+Come valore finale di $\delta \pm \Delta \delta$ utilizziamo formalmente il valore ottenuto considerando il fattore correttivo e la spinta di archimede, poich\`e quest'ultimo \`e significativo rispetto\\*all'errore con cui abbiamo determinato $\delta_{rm}$ (in particolare questi sono uguali).
+\paragraph{Misure con un liquido, scopo dell'esperienza, relazioni funzionali, ipotesi di validit\`a}\mbox{}\\*\\*
+Lo scopo dell'esperienza \`e quello di misurare la densit\`a media assoluta e la densit\`a relativa di un liquido attraverso l'uso di una bilancia di precisione e del metodo del picnometro. Poste $M_1$ = massa del picnometro, $M_2$ = massa del picnometro riempito con acqua distillata, $M_3$ = massa del picnometro riempito col liquido del quale vogliamo conoscere le densità, la densit\`a relativa \`e data da $\delta_{rm} = \frac{M_3-M_1}{M_2-M_1}$. Per ottenere misure valide occorre non spostare la bilancia dal luogo in cui \`e stata tarata.\\*
+$M_1 = 35.40 \pm 0.04\;g$\\*
+$M_2 = 141.24 \pm 0.04\;g$\\*
+$M_3 = 124.34 \pm 0.04\;g$\\*
+$\delta_{rm} = \frac{M_3-M_1}{M_2-M_1} = \frac{124.34 - 35.40}{141.24 - 35.40} \frac{g}{g} = 0.840325018896 \approxeq 0.84 $\\*
+$\Delta \delta_{rm} = 0.000755857898715 \approxeq 0.0008 \Rightarrow 0.04$\\*
+$\delta_{H_2O}(T) = \delta_A(21.4 °C) \approxeq \delta_A(20.0 °C) = 0.99821 \frac{g}{cm^3}$\\*
+\end{document}
