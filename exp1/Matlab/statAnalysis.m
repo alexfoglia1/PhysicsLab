@@ -1,31 +1,31 @@
 values = [0.072300,0.072248,0.072962,0.072796,0.071855,0.072157,0.072751,0.071805,0.071754,0.072234,0.072346,0.072399,0.072414,0.072369,0.072199,0.072680,0.072467,0.072581,0.072450,0.072417,0.072112,0.072372,0.072421,0.072542,0.072582,0.072780,0.072467,0.072359,0.072618,0.072010,0.072375,0.072386,0.072337,0.072910,0.072222,0.072055,0.072315,0.072233,0.072732,0.072130,0.072277,0.072403,0.072307,0.072142,0.072360,0.072926,0.072438,0.072174,0.072119,0.072202,0.072251,0.072152,0.072354,0.072212,0.072377,0.072279,0.072400,0.072569,0.072670,0.072128,0.072882,0.072618,0.072522,0.072247,0.072271,0.072532,0.072632,0.072541,0.072514,0.072112,0.072156,0.072376,0.072200,0.072415,0.072528,0.072372,0.072408,0.072771,0.072180,0.072005,0.072407,0.071973,0.072377,0.072339,0.072289,0.072012,0.072387,0.072312,0.072045,0.072200,0.072544,0.072000,0.072525,0.072164,0.072410,0.072041,0.072394,0.071908,0.071903,0.072213,0.072334,0.072067,0.072169,0.072169,0.072460,0.072213,0.072850,0.072324,0.071511,0.072070,0.072460,0.072223,0.072100,0.072136,0.072201,0.072273,0.072392,0.072332,0.072965,0.072466,0.072328,0.072592,0.072319,0.071964,0.072875,0.072293,0.072033,0.072260,0.072203,0.072290,0.071944,0.072936,0.072356,0.072781,0.072424,0.072363,0.072061,0.072090,0.072343,0.072735,0.071965,0.071892,0.072071,0.072201,0.072073,0.072413,0.071630,0.071730,0.071761,0.071763];
-m = mean(values)
-sigma = computeSd (values)
-bins = [m-4*sigma, m-3.5*sigma, m-3*sigma, m-2.5*sigma, m-2*sigma, m-1.5*sigma, m-sigma, m-sigma/2, m-sigma/4, m-sigma/8, m+sigma/8, m+sigma/4, m+sigma/2, m+sigma, m+1.5*sigma, m+2*sigma, m+2.5*sigma, m+3*sigma, m+3.5*sigma, m+4*sigma]
-N_BINS = length(bins);
+N_TOT = length(values);
+m = mean(values);
+sigma = computeSd (values);
+N_BINS = 12;
+Xmin = 0.07150;
+Xmax = 0.07300;
+dBin = (Xmax - Xmin)/N_BINS;
+bins = @(i)(Xmin + i*dBin);
 counter = zeros(1, N_BINS);
-for i=1:N_BINS - 1
+for i=1:N_BINS
   for j = 1:150
-    if values(j) >= bins(i) && values(j) <= bins(i+1)
+    if values(j) >= bins(i-1) && values(j) < bins(i)
       counter(i) = counter(i)+1;
     endif
   endfor
 endfor
+relFreq = zeros(1, N_BINS);
+half_bins = zeros(1, N_BINS);
+fk = zeros(1, N_BINS);
+fGauss_k = zeros(1, N_BINS);
+sigmafk = zeros(1, N_BINS);
+alpha = N_BINS/(N_TOT*(Xmax - Xmin));
 for i = 1:N_BINS
-  counter(i) = counter(i)/150;
+  relFreq(i) = counter(i)/150;
+  fk(i) = relFreq(i)/dBin;
+  half_bins(i) = bins(i-1)/2 + bins(i)/2;
+  fGauss_k(i) = normpdf(half_bins(i), m, sigma);
+  sigmafk(i) = alpha * sqrt(counter(i));
 endfor
-THREE_SIGMA = sum(counter(3:18));
-TWO_SIGMA = sum(counter(5:16));
-SIGMA = sum(counter(7:14));
-HALF_SIGMA = sum(counter(8:13));
-HALF_HALF_SIGMA = sum(counter(9:12));
-SIGMA_OCTAVES = counter(10) + counter(11);
-histBinsV = linspace(min(values),max(values),histBins+1)
-disp(['Frequency in +- 3sigma: ' num2str(THREE_SIGMA)])
-disp(['Frequency in +- 2sigma: ' num2str(TWO_SIGMA)])
-disp(['Frequency in +- sigma: ' num2str(SIGMA)])
-disp(['Frequency in +- sigma/2: ' num2str(HALF_SIGMA)])
-disp(['Frequency in +- sigma/4: ' num2str(HALF_HALF_SIGMA)])
-disp(['Frequency in +- sigma/8: ' num2str(SIGMA_OCTAVES)])
-hist(values, histBins);
-set(gca, 'xtick', histBinsV);
+bar(fk)
