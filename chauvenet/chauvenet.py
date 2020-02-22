@@ -10,9 +10,9 @@ x = [10.1, 10.0, 10.2, 10.3, 10.2, 10.1, 10.0, 10.2, 10.1, 10.2, 10.1, 10.3, 11.
 flag = True
 it = 0
 while flag:
+    print(x)
     print("Iteration #{}".format(it+1))
     it+=1
-    
     s = sd(x)
     m = mean(x)
     n = len(x)
@@ -29,10 +29,13 @@ while flag:
         expected_n.append(n * p_i)
         
     flag = False
+    to_remove = []
     for i in range(0,n):
         if expected_n[i] < 0.5:
             print("{} shall have {} observations, removed.".format(x[i], expected_n[i]))
-            x.remove(x[i])
-            print(x)
+            to_remove.append(x[i])
             flag = True
+    for toremove in to_remove:
+        x.remove(toremove)
+            
 
