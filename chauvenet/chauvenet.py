@@ -5,37 +5,38 @@ sd = lambda x : (sum([(x[i] - mean(x))**2 for i in range(0,len(x))])/(len(x) - 1
 sqrt2 = 2**0.5
 cnorm = lambda x : (1 + erf((x)/(sqrt2)))/2
 
-x = [10.1, 10.0, 10.2, 10.3, 10.2, 10.1, 10.0, 10.2, 10.1, 10.2, 10.1, 10.3, 11.0, 11.5, 11.6]
+measurements = [10.1, 10.0, 10.2, 10.3, 10.2, 10.1, 10.0, 10.2, 10.1, 10.2, 10.1, 10.3, 11.0, 11.5, 11.6]
 
 flag = True
 it = 0
 while flag:
-    print(x)
+    print(measurements)
     print("Iteration #{}".format(it+1))
     it+=1
-    s = sd(x)
-    m = mean(x)
-    n = len(x)
+    
+    m_sigma = sd(measurements)
+    m_mean  = mean(measurements)
+    n_meas  = len(measurements)
 
-    sds = []
-
-    for x_i in x:
-        d_i = abs(x_i - m)
-        sds.append(d_i / s)
+    std_deviations = []
+    for measurements_i in measurements:
+        dev_i = abs(measurements_i - m_mean)
+        std_deviations.append(dev_i / m_sigma)
         
     expected_n = []
-    for s_i in sds:
-        p_i = 1 - (cnorm(s_i) - cnorm(-s_i))
-        expected_n.append(n * p_i)
+    for s_i in std_deviations:
+        p_in = (cnorm(s_i) - cnorm(-s_i))
+        p_out = 1 - p_in
+        expected_n.append(n_meas * p_out)
         
     flag = False
-    to_remove = []
-    for i in range(0,n):
+    suspicious_measurements = []
+    for i in range(0, n_meas):
         if expected_n[i] < 0.5:
-            print("{} shall have {} observations, removed.".format(x[i], expected_n[i]))
-            to_remove.append(x[i])
+            print("Measurement {} shall have {} observations, removed.".format(measurements[i], expected_n[i]))
+            suspicious_measurements.append(measurements[i])
             flag = True
-    for toremove in to_remove:
-        x.remove(toremove)
+    for measure in suspicious_measurements:
+        measurements.remove(measure)
             
 
