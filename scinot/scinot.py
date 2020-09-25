@@ -12,7 +12,7 @@ def to_scinot(x):
             x *= 10
             shift -= 1
         if x > 0.5 and x <= 5:
-            return x, shift
+            return float(numpy.format_float_positional(x)), shift
 try:            
     x = float(sys.argv[1])
     dx = float(sys.argv[2])

@@ -10,8 +10,8 @@ measurements = [10.1, 10.0, 10.2, 10.3, 10.2, 10.1, 10.0, 10.2, 10.1, 10.2, 10.1
 flag = True
 it = 0
 while flag:
-    print(measurements)
     print("Iteration #{}".format(it+1))
+    print(measurements)
     it+=1
     
     m_sigma = sd(measurements)
@@ -33,7 +33,7 @@ while flag:
     suspicious_measurements = []
     for i in range(0, n_meas):
         if expected_n[i] < 0.5:
-            print("Measurement {} shall have {} observations, removed.".format(measurements[i], expected_n[i]))
+            print("Measurement {} shall have {} observations, removed\n".format(measurements[i], expected_n[i]))
             suspicious_measurements.append(measurements[i])
             flag = True
     for measure in suspicious_measurements:
